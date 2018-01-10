@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="edu.gatech.seclass.tipcalulator.MainActivity">
+
+    <Button
+        android:text="@string/increase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/minus_btn_lbl"
+        android:layout_toEndOf="@+id/minus_btn_lbl"
+        android:id="@+id/add_btn_lbl"
+        android:elevation="0dp" />
+
+    <TextView
+        android:text="@string/tip_amnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tip_label"
+        android:layout_alignStart="@+id/percent_value"
+        android:id="@+id/tip_amnt" />
+
+    <TextView
+        android:text="$0.00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/total_label"
+        android:layout_toEndOf="@+id/Billed_amt_label"
+        android:id="@+id/total_amnt" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        android:layout_below="@+id/total_amnt"
+        android:id="@+id/line"/>
+
+<RadioGroup
+    android:id="@+id/radioGroup"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignStart="@+id/billAmount"
+    android:layout_below="@+id/total_amnt">
+    <RadioButton
+        android:text="None"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_below="@+id/total_amnt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:id="@+id/round_no" />
+
+
+    <RadioButton
+        android:text="Tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/round_no"
+        android:layout_alignStart="@+id/round_no"
+        android:layout_marginTop="24dp"
+        android:id="@+id/rounding_tip" />
+
+    <RadioButton
+        android:text="Total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/rounding_total"
+        android:layout_below="@+id/rounding_tip"
+        android:layout_alignStart="@+id/rounding_tip" />
+</RadioGroup>
+
+    <TextView
+        android:text="Percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:id="@+id/percent_label"
+        tools:text="@string/tip_percent_label"
+        android:layout_below="@+id/Billed_amt_label"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="@string/tip_amnt_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:id="@+id/tip_label"
+        android:layout_below="@+id/percent_label"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="@string/total_amnt_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:id="@+id/total_label"
+        android:layout_below="@+id/tip_label"
+        android:layout_alignParentStart="true" />
+
+    <!-- Per Person Amount-->
+
+    <!--Per Person label -->
+
+    <TextView
+        android:text="Billed Amount"
+        android:inputType="numberDecimal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Billed_amt_label"
+        tools:text="@string/bill_amnt_label"
+        android:layout_alignBaseline="@+id/billAmount"
+        android:layout_alignBottom="@+id/billAmount"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Apply"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/apply_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="13dp" />
+
+    <TextView
+        android:text="Per Person"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/per_person_l"
+        android:layout_below="@+id/split_spinner"
+        android:layout_alignStart="@+id/rounding_l" />
+
+    <TextView
+        android:text="Rounding"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:id="@+id/rounding_l"
+        android:layout_below="@+id/line"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Split Bill?"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/split_bill_l"
+        android:layout_alignBaseline="@+id/split_spinner"
+        android:layout_alignBottom="@+id/split_spinner"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/split_spinner"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/radioGroup"
+        android:layout_alignStart="@+id/radioGroup" />
+
+
+    <TextView
+        android:text="TextView"
+        android:textSize="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/per_person"
+        tools:text="@string/per_person"
+        android:layout_below="@+id/split_spinner"
+        android:layout_toEndOf="@+id/tip_amnt" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/billAmount"
+        android:text="@string/bill_amount"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="11dp" />
+
+    <Button
+        android:text="@string/decrease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:id="@+id/minus_btn_lbl"
+        android:layout_alignBaseline="@+id/percent_label"
+        android:layout_alignBottom="@+id/percent_label"
+        android:layout_alignStart="@+id/billAmount" />
+
+    <TextView
+        android:text="@string/tip_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/percent_value"
+        android:layout_alignBaseline="@+id/minus_btn_lbl"
+        android:layout_alignBottom="@+id/minus_btn_lbl"
+        android:layout_toStartOf="@+id/minus_btn_lbl" />
+
+</RelativeLayout>
+

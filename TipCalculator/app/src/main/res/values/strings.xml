@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">TipCalulator</string>
+
+    <string name="bill_amnt_label">Bill Amount</string>
+    <string name="bill_amount"></string>
+
+    <string name="tip_percent_label">Percent</string>
+    <string name="tip_percent">15%</string>
+    <string name="increase">+</string>
+    <string name="decrease">-</string>
+
+    <string name="tip_amnt_label">Tip Amount</string>
+    <string name="tip_amnt">$0.00</string>
+
+    <string name="total_amnt_label">Total</string>
+    <string name="total_amnt">$0.00</string>
+    <string name="rounding">Rounding</string>
+    <string name="per_person">0.00</string>
+    <string-array name="split_array">
+        <item> </item>
+        <item> No </item>
+        <item> 2 ways</item>
+        <item> 3 ways</item>
+        <item> 4 ways</item>
+    </string-array>
+</resources>
